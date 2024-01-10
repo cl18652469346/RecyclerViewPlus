@@ -1,7 +1,9 @@
 package com.cl.recycleviewplus;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.collection.SparseArrayCompat;
@@ -25,6 +27,11 @@ public class ViewHolder extends RecyclerView.ViewHolder {
 
     public static ViewHolder createViewHolder(View itemView) {
         return new ViewHolder(itemView);
+    }
+
+    public static ViewHolder createViewHolder(int layoutId, ViewGroup parent) {
+        View rootView = LayoutInflater.from(parent.getContext()).inflate(layoutId, parent, false);
+        return new ViewHolder(rootView);
     }
 
     public static ViewHolder createViewHolder(Context context, View itemView) {

@@ -1,8 +1,8 @@
 package com.cl.recycleviewplus;
 
-public class NoItemDelegate implements IItemDelegate<Object> {
+public class NoItemDelegate<T> implements IItemDelegate<T> {
     @Override
-    public boolean isForViewType(Object data, int position) {
+    public boolean isForViewType(T data, int position) {
         return true;
     }
 
@@ -12,7 +12,7 @@ public class NoItemDelegate implements IItemDelegate<Object> {
     }
 
     @Override
-    public void parse(ViewHolder holder, Object data, int position) {
+    public void parse(ViewHolder holder, T data, int position) {
         // do nothing.
     }
 }
